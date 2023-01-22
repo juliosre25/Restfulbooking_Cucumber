@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: com.company.RunCucumberTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.275 s <<< FAILURE! - in com.company.RunCucumberTest
+initializationError(com.company.RunCucumberTest)  Time elapsed: 0.007 s  <<< ERROR!
+java.lang.IllegalArgumentException: path must exist: D:\restful booker\Restfulbooking_Cucumber\src\test\resources\com\company
+
