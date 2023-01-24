@@ -1,5 +1,5 @@
 Feature: Rest - Eliminar Libro
-
+  @ApiRest
 Scenario: Eliminar detalle de Libro por Id
     Given el sistema esta listo entonces enviamos un request
     When el sistema envia un request al servicio de Eliminar Libro por Id

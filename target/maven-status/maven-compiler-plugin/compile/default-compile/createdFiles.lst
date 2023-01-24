@@ -1,3 +1,6 @@
+com\company\entities\BookingDates.class
 com\company\entities\Libro.class
-com\company\entities\bookingDates.class
+com\company\entities\Credenciales.class
+com\company\entities\datosCompartidos.class
 com\company\Main.class
+com\company\entities\Entities.class

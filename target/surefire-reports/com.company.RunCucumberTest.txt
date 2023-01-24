@@ -1,4 +1,22 @@
 -------------------------------------------------------------------------------
 Test set: com.company.RunCucumberTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.965 s - in com.company.RunCucumberTest
+Tests run: 9, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 21.279 s <<< FAILURE! - in com.company.RunCucumberTest
+Eliminar detalle de Libro por Id(Rest - Eliminar Libro)  Time elapsed: 1.337 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <403>.
+
+
+Actualizar un Libro Satisfactoriamente(REST - Actualizar un Libro-PUT y PATCH)  Time elapsed: 1.647 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <403>.
+
+
+Actualizar un Libro Parcial(REST - Actualizar un Libro-PUT y PATCH)  Time elapsed: 1.339 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <403>.
+
+

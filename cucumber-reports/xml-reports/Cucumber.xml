@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="3" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="8" time="21.758">
-<testcase classname="REST - Ping Api" name="Ping API" time="6.009">
+<testsuite errors="0" failures="3" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="9" time="19.809">
+<testcase classname="REST - Ping Api" name="Ping API" time="7.246">
 <system-out><![CDATA[Given el sistema esta listo entonces enviamos un request ping...............passed
 When el sistema envia un request al servicio de ping........................passed
 Then el response Status Code tiene que ser 201..............................passed
 ]]></system-out>
 </testcase>
-<testcase classname="REST - Crear un libro" name="Crear un Libro Satisfactoriamente" time="1.416">
-<failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;404&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[Given el sistema esta listo entonces enviamos un request....................passed
+<testcase classname="REST - Crear un libro" name="Crear un Libro Satisfactoriamente" time="1.897">
+<system-out><![CDATA[Given el sistema esta listo entonces enviamos un request....................passed
 When el sistema envia un request al servicio de crear Libro.................passed
+Then el response Status deberia ser 200.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="REST - Crear un libro" name="Crear un Libro caso con error" time="1.256">
+<system-out><![CDATA[Given el sistema esta listo entonces enviamos un request....................passed
+When el sistema envia un request al servicio de crear Libro sin adjuntar el booking Dates.passed
+Then el response Status deberia ser 500.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Rest - Eliminar Libro" name="Eliminar detalle de Libro por Id" time="1.271">
+<failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;403&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[Given el sistema esta listo entonces enviamos un request....................passed
+When el sistema envia un request al servicio de Eliminar Libro por Id.......passed
 Then el response Status deberia ser 200.....................................failed
 
 StackTrace:
 java.lang.AssertionError: 1 expectation failed.
-Expected status code <200> but was <404>.
+Expected status code <200> but was <403>.
 
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -52,29 +64,23 @@ Expected status code <200> but was <404>.
 	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
 	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
 	at com.company.stepdefs.CommonStepdefs.elResponseStatusDeberiaSer(CommonStepdefs.java:28)
-	at ✽.el response Status deberia ser 200(file:///D:/Restful_Booker_Julio/Restfulbooking_Cucumber/Restfulbooking_Cucumber/src/test/resources/com.company/create-libro.feature:16)
+	at ✽.el response Status deberia ser 200(file:///D:/Restful_Booker_Julio/Restfulbooking_Cucumber/Restfulbooking_Cucumber/src/test/resources/com.company/eliminar-libro.feature:7)
 ]]></failure>
 </testcase>
-<testcase classname="REST - Crear un libro" name="Crear un Libro caso con error" time="2.533">
-<system-out><![CDATA[Given el sistema esta listo entonces enviamos un request....................passed
-When el sistema envia un request al servicio de crear Libro sin adjuntar el booking Dates.passed
-Then el response Status deberia ser 500.....................................passed
-]]></system-out>
-</testcase>
-<testcase classname="REST - Obtener los id Libro y  detalle de libro por ID" name="Obtener id de libros" time="1.662">
+<testcase classname="REST - Obtener los id Libro y  detalle de libro por ID" name="Obtener id de libros" time="1.876">
 <system-out><![CDATA[Given el sistema esta listo entonces enviamos un request....................passed
 When el sistema envia un request al servicio de Listar  id..................passed
 Then el response Status deberia ser 200.....................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="REST - Obtener los id Libro y  detalle de libro por ID" name="Obtener detalle de Libro por Id" time="3.453">
+<testcase classname="REST - Obtener los id Libro y  detalle de libro por ID" name="Obtener detalle de Libro por Id" time="1.258">
 <system-out><![CDATA[Given el sistema esta listo entonces enviamos un request....................passed
 When el sistema envia un request al servicio de Listar  detalle por Id......passed
 Then el response Status deberia ser 200.....................................passed
 And Sistema deberia responder con response data.............................passed
 ]]></system-out>
 </testcase>
-<testcase classname="REST - Logueo" name="Logueo Correcto" time="1.78">
+<testcase classname="REST - Logueo" name="Logueo Correcto" time="1.524">
 <system-out><![CDATA[Given el sistema esta listo entonces enviamos un request de logeo con "admin" y "password123".passed
 And utilizar el header......................................................passed
 When el sistema envia un request al servicio de login.......................passed
@@ -82,7 +88,7 @@ Then el response Status tiene que ser 200...................................pass
 Then capturo el TOKEN.......................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="REST - Actualizar un Libro-PUT y PATCH" name="Actualizar un Libro Satisfactoriamente" time="1.415">
+<testcase classname="REST - Actualizar un Libro-PUT y PATCH" name="Actualizar un Libro Satisfactoriamente" time="1.604">
 <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;403&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[Given el sistema esta listo entonces enviamos un request....................passed
 When el sistema envia un request al servicio de Actualizar Libro............passed
 Then el response Status deberia ser 200.....................................failed
@@ -129,7 +135,7 @@ Expected status code <200> but was <403>.
 	at ✽.el response Status deberia ser 200(file:///D:/Restful_Booker_Julio/Restfulbooking_Cucumber/Restfulbooking_Cucumber/src/test/resources/com.company/put-patch-libro.feature:13)
 ]]></failure>
 </testcase>
-<testcase classname="REST - Actualizar un Libro-PUT y PATCH" name="Actualizar un Libro Parcial" time="2.943">
+<testcase classname="REST - Actualizar un Libro-PUT y PATCH" name="Actualizar un Libro Parcial" time="1.287">
 <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;403&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[Given el sistema esta listo entonces enviamos un request....................passed
 When el sistema envia un request al servicio de Actualizar Libro Parcial....passed
 Then el response Status deberia ser 200.....................................failed
@@ -149,8 +155,7 @@ Expected status code <200> but was <403>.
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.GeneratedMethodAccessor190.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
@@ -162,8 +167,7 @@ Expected status code <200> but was <403>.
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
 	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.GeneratedMethodAccessor189.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
