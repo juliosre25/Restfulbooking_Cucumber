@@ -2,6 +2,7 @@ package com.company;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import io.cucumber.junit.CucumberOptions.SnippetType;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
@@ -12,9 +13,9 @@ import org.junit.runner.RunWith;
         "junit:cucumber-reports/xml-reports/Cucumber.xml"},
         tags = "@ApiRest",
         glue = {"com.company"},
-        features ={"src/test/resources/com/company"},
+        features ={"src/test/resources/com.company"},
         monochrome = true,
-        snippets = CucumberOptions.SnippetType.CAMELCASE
+        snippets = SnippetType.CAMELCASE
 )
 
 public class RunCucumberTest {

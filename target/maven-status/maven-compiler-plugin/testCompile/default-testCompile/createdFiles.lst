@@ -1,4 +1,8 @@
-com\company\config\restfulBookingEnvironments.class
-com\company\stepdefs\GetLibroStepdefs.class
-com\company\config\restfulBookingEndpoints.class
 com\company\RunCucumberTest.class
+com\company\config\restfulBookingEnvironments.class
+com\company\stepdefs\CommonStepdefs.class
+com\company\stepdefs\GetLibroStepdefs.class
+com\company\stepdefs\PingStepdefs.class
+com\company\config\restfulBookingEndpoints.class
+com\company\stepdefs\LoginStepdefs.class
+com\company\stepdefs\createLibroStepdefs.class

@@ -1,4 +1,8 @@
 D:\restful booker\Restfulbooking_Cucumber\src\test\java\com\company\RunCucumberTest.java
 D:\restful booker\Restfulbooking_Cucumber\src\test\java\com\company\config\restfulBookingEnvironments.java
 D:\restful booker\Restfulbooking_Cucumber\src\test\java\com\company\stepdefs\GetLibroStepdefs.java
+D:\restful booker\Restfulbooking_Cucumber\src\test\java\com\company\stepdefs\PingStepdefs.java
+D:\restful booker\Restfulbooking_Cucumber\src\test\java\com\company\stepdefs\createLibroStepdefs.java
+D:\restful booker\Restfulbooking_Cucumber\src\test\java\com\company\stepdefs\LoginStepdefs.java
 D:\restful booker\Restfulbooking_Cucumber\src\test\java\com\company\config\restfulBookingEndpoints.java
+D:\restful booker\Restfulbooking_Cucumber\src\test\java\com\company\stepdefs\CommonStepdefs.java

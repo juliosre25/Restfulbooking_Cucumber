@@ -13,37 +13,28 @@ import org.junit.Assert;
 
 import java.util.Map;
 
+import static com.company.config.restfulBookingEnvironments.RESTFULBOOKING_URI;
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
 public class GetLibroStepdefs {
-     private RequestSpecification request;
-     private Response response;
+     private CommonStepdefs commonStepdefs;
+     public GetLibroStepdefs (CommonStepdefs commonStepdefs){
+         this.commonStepdefs =commonStepdefs;
+     }
 
-    @Given("el sistema esta listo entonces enviamos un request")
-    public void elSistemaEstaListoEntoncesEnviamosUnRequest() {
-     request =  given()
-                .header("Authorization","1d280ae184861cb");
-    }
 
     @When("el sistema envia un request al servicio de Listar  id")
     public void elSistemaEnviaUnRequestAlServicioDeListarId() {
-        response = request.when()
+        commonStepdefs.response = commonStepdefs.request.when()
                 .get(restfulBookingEnvironments.RESTFULBOOKING_URI+ "/"+ restfulBookingEndpoints.Consultar_Libros);
     }
-    
-    @Then("el response Status deberia ser {int}")
-    public void elResponseStatusDeberiaSer(int statusCode) {
-        response.then()
-                .log()
-                .all()
-                .statusCode(statusCode);
 
-    }
+
 
     @When("el sistema envia un request al servicio de Listar  detalle por Id")
     public void elSistemaEnviaUnRequestAlServicioDeListarDetallePorId(Map<String,String> booking) {
 
-        response = request.
+        commonStepdefs.response = commonStepdefs.request.
                 pathParam("bookingId",booking.get("bookingId")).
         when()
                 .get(restfulBookingEnvironments.RESTFULBOOKING_URI+ "/"+ restfulBookingEndpoints.Obtener_Detalle_Libro);
@@ -52,7 +43,7 @@ public class GetLibroStepdefs {
 
     @And("Sistema deberia responder con response data")
     public void sistemaDeberiaResponderConResponseData(Map<String,String> expectData) {
-        JsonPath actualData = new JsonPath(response.getBody().asString());
+        JsonPath actualData = new JsonPath(commonStepdefs.response.getBody().asString());
         Assert.assertEquals(expectData.get("additionalneeds:"),actualData.get("booking.additionalneeds"));
 
 
